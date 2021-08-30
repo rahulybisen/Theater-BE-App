@@ -1,0 +1,16 @@
+{
+	"apps": [
+		{
+			"name": "NAS-BE-LMS",
+			"script": "bin/dev",
+			"node_args": "--harmony",
+			"merge_logs": true,
+			"exec_mode": "cluster",
+			"instances": "4",
+			"error_file": "../error/child-err.log",
+			"out_file": "../error/child-out.log",
+			"pid_file": "../error/child.pid",
+			"max_memory_restart": "600M"
+		}
+	]
+}

@@ -1,0 +1,27 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+//Mysql connection
+// datasource db {
+//     provider = "mysql"
+//     url      = env("DATABASE_URL")
+// }
+
+// I am using Sql lite to store application data.
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+model Ticket {
+    id               String   @id @default(cuid())
+     customerName     String   @default("")
+    performanceTitle String   @default("")
+    performanceTime  String   @default("")
+    ticketPrice      Int
+    month            Int      @default(0)
+    isActive         Boolean
+    createdAt        DateTime @default(now())
+    updatedAt        DateTime @default(now())
+}
